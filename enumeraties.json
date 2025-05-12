@@ -1,0 +1,17 @@
+{
+    "DRG":["Concessiegebied", "Concessieverlener","Concessienemer"],
+    "VTG":["Concessiegebied", "Concessieverlener","Concessienemer","Brandstof","Emissie"],
+    "VGR":["Concessiegebied", "Concessieverlener","Concessienemer"],
+    "NVG":["Concessiegebied", "Concessieverlener","Concessienemer"],
+    "VAP":["Concessiegebied", "Concessieverlener","Concessienemer"],
+    "ASL":["Concessiegebied", "Concessieverlener","Concessienemer"],
+    "IUS":["Concessiegebied", "Concessieverlener","Concessienemer"],
+    "OVS":["Concessiegebied", "Concessieverlener","Concessienemer"],
+    "BEZ":["Concessiegebied", "Concessieverlener","Concessienemer"],
+    "RIT":["Concessiegebied", "Concessieverlener","Concessienemer"],
+    "REI":["Concessiegebied", "Concessieverlener","Concessienemer"],
+    "OPB":["Concessiegebied", "Concessieverlener","Concessienemer"],
+    "ISV":["Concessiegebied", "Concessieverlener","Concessienemer"],
+    "KRO":["Concessiegebied", "Concessieverlener","Concessienemer"],
+    "KRA":["Concessiegebied", "Concessieverlener","Concessienemer"]
+}

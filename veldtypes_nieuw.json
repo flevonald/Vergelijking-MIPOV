@@ -1,0 +1,26 @@
+{
+    "DRG":{"Concessiegebied":"str", "Concessieverlener":"str","Concessienemer":"str", "Datum":"str", 
+    "Lijn":"str", "Beginpunt":"str", "Eindpunt":"str", "Route":"str", "Type":"str", 
+    "Modaliteit":"str", "Eerste Rit":"str", "Laatste Rit":"str", "AantalPlan":"int", 
+    "CapTotPlan":"int",     "CapZitPlan":"int",  "CapFietsPlan":"int", "CapAutoPlan":"int", 
+    "DrkPlan":"float", "DruPlan":"str", "AantalPubl":"int", "CapTotPubl":"int", "CapZitPubl":"int", 
+    "CapFietsPubl":"int", "CapAutoPubl":"int", "DrkPubl":"float",  "DruPubl":"str" 
+    },
+    "VTG":{"Concessiegebied":"str", "Concessieverlener":"str","Concessienemer":"str", "JaarMaand":"str","Modaliteit":"str", 
+    "Bouwjaar":"str", "Kenteken":"str", "Nummer":"str", "Brandstof":"str", "Emissie":"str", "Eigendom":"str", "Toegankelijkheid":"str", 
+    "Merk":"str", "Model":"str", "Type":"str", "Huisstijl":"str", "CapZit":"int", "CapSta":"int", "CapRol":"int", "CapFiets":"int", 
+    "CapAuto":"int"},
+    "VGR":{},
+    "NVG":{},
+    "VAP":{},
+    "ASL":{},
+    "IUS":{},
+    "OVS":{},
+    "BEZ":{},
+    "RIT":{},
+    "REI":{},
+    "OPB":{},
+    "ISV":{},
+    "KRO":{},
+    "KRA":{}
+}
