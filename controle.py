@@ -7,6 +7,7 @@ Created on Mon May 12 11:37:18 2025
 import os
 import pandas as pd
 import json
+import numpy as np
 from datetime import timedelta
 #%% Functies voor verschillende deeltypen
 
@@ -23,10 +24,11 @@ def tijd_datetime(tijd):
         dt_x = timedelta(days=tijd_x[0], hours=tijd_x[1], minutes=tijd_x[2], seconds=tijd_x[3])
         return dt_x
     except:
+        # Fout bij omzetten, teruggeven van de originele waarde
         print(f'{tijd} niet omgezet')
-#%%    
+    
 if __name__ == "__main__":
-#%% Controle-informatie inladen
+# Controle-informatie inladen
     with open("enumeraties.json", "r") as read_content: 
         MIPOV_enumeraties = json.load(read_content)
 
@@ -36,7 +38,7 @@ if __name__ == "__main__":
 
     print('Controleinformatie geladen')
     
-#%% Files inladen
+# Files inladen
     for input_filename in os.listdir('input_nieuw'):
         print(input_filename)
         file_type = input_filename.split("_")[0]
@@ -48,7 +50,7 @@ if __name__ == "__main__":
         
         df = pd.read_csv(os.path.join('input_nieuw', input_filename), dtype=str , sep=';', decimal=',')
         
-#%% kolommen
+# kolommen
         kolommen_file = df.columns.to_list()
         if len(kolommen_file) == 1:
             print('Slechts 1 kolom! \n \
@@ -67,13 +69,13 @@ if __name__ == "__main__":
             except:
                 print(f'{kolom} kan niet worden omgezet')
         
-        #%%Datum
+        #Datum
         if 'Datum' in kolommen_file:
             try:
                 df['Datum'] = pd.to_datetime(df['Datum'], format='%Y%m%d')
             except:
                 print('Omzetten datum niet geslaagd')
- #%%tijd
+ #tijd
         ## nog in json te zetten
         for tijdkolom in ["Eerste Rit", "Laatste Rit","DruPlan", "DruPubl"]:
             if tijdkolom in kolommen_file:
@@ -82,9 +84,18 @@ if __name__ == "__main__":
                     print('Niet alle rijen hebben 6 karakters')
                 print(f'Omzetten van tijdkolom: {tijdkolom}')    
                 df[tijdkolom] = df[tijdkolom].apply(tijd_datetime)
-        
-        
-#%% veldtypes
+                ## nog in json te zetten
+        for haltekolom in ["RitVan","RitNaar","Haltecode"]:
+            if haltekolom in kolommen_file:
+                #aantal waarden
+                lengte = len(df[haltekolom])
+                # aantal dat begint met NL:
+                len_q = len(df.loc[df[haltekolom].str.startswith('NL:CHB:Quay:')])
+                perc = round(len_q / lengte * 100, 2)
+                print(f'{len_q} van {lengte} waarden in {haltekolom} beginnen met NL:CHB:Quay: ({perc}%)')
 
-#%% enumeraties
+        
+#veldtypes
+
+# enumeraties
         print(f'Klaar met bestand {input_filename}! \n\n')
